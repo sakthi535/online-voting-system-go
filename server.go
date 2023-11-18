@@ -219,5 +219,5 @@ func main() {
 	router.POST("/vote", addVote)
 	router.GET("/vote", getVote)
 
-	router.Run("0.0.0.0:" + os.Getenv("port"))
+	router.Run("0.0.0.0:" + os.Getenv("port_go"))
 }
