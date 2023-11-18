@@ -212,22 +212,12 @@ func main() {
 	dbname = os.Getenv("dbname")
 
 	router := gin.Default()
-	// router.ForwardedByClientIP = true
-	// router.SetTrustedProxies([]string{"127.0.0.1"})
 
 	router.Use(corsMiddleware())
-	// router.Use(cors.New(cors.Config{
-	// 	AllowOrigins:     []string{"*"},
-	// 	AllowMethods:     []string{"PUT", "PATCH, POST, GET"},
-	// 	AllowHeaders:     []string{"Origin"},
-	// 	ExposeHeaders:    []string{"Content-Length"},
-	// 	AllowCredentials: true,
-	// 	MaxAge:           12 * time.Hour,
-	// }))
 
 	router.POST("/login", authenticate)
 	router.POST("/vote", addVote)
 	router.GET("/vote", getVote)
 
-	router.Run("localhost:8087")
+	router.Run("0.0.0.0:" + os.Getenv("port"))
 }
