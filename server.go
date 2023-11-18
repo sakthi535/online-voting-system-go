@@ -10,7 +10,6 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/gofrs/uuid"
-	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 )
 
@@ -200,11 +199,11 @@ func corsMiddleware() gin.HandlerFunc {
 
 func main() {
 
-	err := godotenv.Load("/opt/render/project/go")
+	// err := godotenv.Load("/opt/render/project/go")
 
-	if err != nil {
-		panic(err)
-	}
+	// if err != nil {
+	// 	panic(err)
+	// }
 
 	host = os.Getenv("host")
 	user = os.Getenv("user")
