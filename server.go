@@ -69,7 +69,7 @@ func checkError(err error) {
 
 func EncryptAES(plaintext string) string {
 
-	key := []byte(os.Getenv("key"))
+	key := []byte("0123456789012345")
 
 	bc, err := aes.NewCipher([]byte(key))
 	if err != nil {
@@ -89,7 +89,7 @@ func EncryptAES(plaintext string) string {
 func DecryptAES(ct string) string {
 
 	ciphertext_first, _ := hex.DecodeString(ct)
-	key := (os.Getenv("key"))
+	key := ("0123456789012345")
 
 	bc, err := aes.NewCipher([]byte(key))
 	if err != nil {
