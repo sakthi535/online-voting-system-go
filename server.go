@@ -200,7 +200,7 @@ func corsMiddleware() gin.HandlerFunc {
 
 func main() {
 
-	err := godotenv.Load()
+	err := godotenv.Load("/opt/render/project/go")
 
 	if err != nil {
 		panic(err)
